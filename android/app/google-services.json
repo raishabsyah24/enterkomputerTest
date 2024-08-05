@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "822510360220",
+    "project_id": "enterkomputer-ec540",
+    "storage_bucket": "enterkomputer-ec540.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822510360220:android:346e9ffffea32176457f59",
+        "android_client_info": {
+          "package_name": "com.example.enterkomputer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK3UYcANR1CqN_wPc6_dojGbo4NVaRS9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
