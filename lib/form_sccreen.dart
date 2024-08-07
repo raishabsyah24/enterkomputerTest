@@ -1,3 +1,4 @@
+import 'package:enterkomputertest/homePage.dart';
 import 'package:flutter/material.dart';
 
 class FormScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _FormScreenState extends State<FormScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Form Screen"),
+        title: Text("EnterKomputer Test"),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -93,6 +94,8 @@ class _FormScreenState extends State<FormScreen> {
                       emailController.clear();
                       passwordController.clear();
                     }
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => HomeScreen()));
                   },
                   child: Container(
                     height: 50,
