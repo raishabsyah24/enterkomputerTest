@@ -48,7 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Text(
                 'Now Playing',
-                style: GoogleFonts.aBeeZee(fontSize: 25),
+                style: GoogleFonts.aBeeZee(
+                    fontSize: 25, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 32),
               SizedBox(
@@ -70,7 +71,8 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 32),
               Text(
                 'Popular Movies',
-                style: GoogleFonts.aBeeZee(fontSize: 25),
+                style: GoogleFonts.aBeeZee(
+                    fontSize: 25, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 32),
               SizedBox(
