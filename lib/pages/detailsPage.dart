@@ -1,3 +1,4 @@
+import 'package:enterkomputertest/api/api.dart';
 import 'package:enterkomputertest/colors.dart';
 import 'package:enterkomputertest/constants.dart';
 import 'package:enterkomputertest/models/movie.dart';
@@ -5,9 +6,23 @@ import 'package:enterkomputertest/widget/blackButton.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DetailsPage extends StatelessWidget {
+class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key, required this.mmovie});
   final Movie mmovie;
+
+  @override
+  State<DetailsPage> createState() => _DetailsPageState();
+}
+
+class _DetailsPageState extends State<DetailsPage> {
+  // late Future<List<Movie>> postFavoriteMovie;
+
+  // @override
+  // void initState() {
+  //   super.initState();
+
+  //   postFavoriteMovie = Api().postFavoriteMovies();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +37,7 @@ class DetailsPage extends StatelessWidget {
             floating: true,
             flexibleSpace: FlexibleSpaceBar(
                 title: Text(
-                  mmovie.title,
+                  widget.mmovie.title,
                   style: GoogleFonts.belleza(
                       fontSize: 17,
                       fontWeight: FontWeight.w600,
@@ -33,7 +48,7 @@ class DetailsPage extends StatelessWidget {
                       bottomLeft: Radius.circular(24),
                       bottomRight: Radius.circular(24)),
                   child: Image.network(
-                    '${Constants.imagePath}${mmovie.backDropPath}',
+                    '${Constants.imagePath}${widget.mmovie.backDropPath}',
                     filterQuality: FilterQuality.high,
                     fit: BoxFit.cover,
                   ),
@@ -44,14 +59,57 @@ class DetailsPage extends StatelessWidget {
               padding: const EdgeInsets.all(12),
               child: Column(
                 children: [
-                  Text(
-                    "Overview",
-                    style: GoogleFonts.openSans(
-                        fontSize: 30, fontWeight: FontWeight.w800),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colours.scaffoldBgColor,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colours.scaffoldBgColor.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 8,
+                            ),
+                          ],
+                        ),
+                        child: Icon(
+                          Icons.watch_later_outlined,
+                          size: 25,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "Overview",
+                        style: GoogleFonts.openSans(
+                            fontSize: 30, fontWeight: FontWeight.w800),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colours.scaffoldBgColor,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colours.scaffoldBgColor.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 8,
+                            ),
+                          ],
+                        ),
+                        child: Icon(
+                          Icons.favorite,
+                          size: 25,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    mmovie.overview,
+                    widget.mmovie.overview,
                     style: GoogleFonts.roboto(
                         fontSize: 25, fontWeight: FontWeight.w400),
                     textAlign: TextAlign.justify,
@@ -74,7 +132,7 @@ class DetailsPage extends StatelessWidget {
                                 style: GoogleFonts.roboto(
                                     fontSize: 17, fontWeight: FontWeight.w400),
                               ),
-                              Text(mmovie.releaseDate,
+                              Text(widget.mmovie.releaseDate,
                                   style: GoogleFonts.roboto(
                                       fontSize: 17,
                                       fontWeight: FontWeight.w400))
@@ -99,7 +157,7 @@ class DetailsPage extends StatelessWidget {
                                 color: Colors.amber,
                               ),
                               Text(
-                                '${mmovie.voteAverage.toStringAsFixed(1)}/10',
+                                '${widget.mmovie.voteAverage.toStringAsFixed(1)}/10',
                                 style: GoogleFonts.roboto(
                                     fontSize: 17, fontWeight: FontWeight.bold),
                               )

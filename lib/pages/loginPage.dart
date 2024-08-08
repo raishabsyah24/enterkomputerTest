@@ -1,14 +1,14 @@
 import 'package:enterkomputertest/pages/homePage.dart';
 import 'package:flutter/material.dart';
 
-class FormScreen extends StatefulWidget {
-  const FormScreen({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<FormScreen> createState() => _FormScreenState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _FormScreenState extends State<FormScreen> {
+class _LoginPageState extends State<LoginPage> {
   final _formfield = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -95,7 +95,7 @@ class _FormScreenState extends State<FormScreen> {
                       passwordController.clear();
                     }
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => HomeScreen()));
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   child: Container(
                     height: 50,

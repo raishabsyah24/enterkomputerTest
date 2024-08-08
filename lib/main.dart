@@ -1,5 +1,6 @@
 // import 'package:enterkomputertest/form_sccreen.dart';
-import 'package:enterkomputertest/pages/homePage.dart';
+// import 'package:enterkomputertest/pages/homePage.dart';
+import 'package:enterkomputertest/pages/loginPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: HomeScreen(),
+      home: LoginPage(),
     );
   }
 }
