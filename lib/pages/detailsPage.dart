@@ -15,14 +15,14 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
-  // late Future<List<Movie>> postFavoriteMovie;
+  late Future<List<Movie>> postFavoriteMovie;
 
-  // @override
-  // void initState() {
-  //   super.initState();
+  @override
+  void initState() {
+    super.initState();
 
-  //   postFavoriteMovie = Api().postFavoriteMovies();
-  // }
+    postFavoriteMovie = Api().postFavoriteMovies();
+  }
 
   @override
   Widget build(BuildContext context) {

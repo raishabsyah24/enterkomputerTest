@@ -1,3 +1,4 @@
+///data yang di get dari TMDB
 class Movie {
   String title;
   String backDropPath;
